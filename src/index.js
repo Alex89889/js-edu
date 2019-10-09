@@ -8,7 +8,15 @@ module.exports = function getTimeForEducation(
     focus = 'family', 
     knowsProgramming = true,
     config = {family: 4}
-    ) {
-      return 0;
-  };
-  
+    ) 
+	{
+	var basicHour = 500;
+	var masterHour = 800;
+
+	if (knowsProgramming) {
+		return Math.ceil(masterHour / config[focus]);
+	} else {
+		return Math.ceil((masterHour + basicHour) / config[focus]);
+	}
+
+}
